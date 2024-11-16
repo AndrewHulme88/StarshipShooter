@@ -11,6 +11,7 @@ public class PlayerShooter : MonoBehaviour
     [SerializeField] float baseFiringRate = 0.4f;
     [SerializeField] float powerUpFiringRate = 2f;
     [SerializeField] float powerUpDuration = 10f;
+    [SerializeField] Vector3 bulletOffset;
 
     [Header("AI")]
     [SerializeField] bool useAI;
@@ -71,7 +72,7 @@ public class PlayerShooter : MonoBehaviour
             }
             else
             {
-                GameObject instance = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+                GameObject instance = Instantiate(projectilePrefab, transform.position + bulletOffset, Quaternion.identity);
                 Rigidbody2D rb2d = instance.GetComponent<Rigidbody2D>();
                 if (rb2d != null)
                 {
