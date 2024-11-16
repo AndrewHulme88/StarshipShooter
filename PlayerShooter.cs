@@ -62,7 +62,7 @@ public class PlayerShooter : MonoBehaviour
         {
             if (useAI)
             {
-                GameObject instance = Instantiate(projectilePrefab, transform.position, Quaternion.Euler(0, 0, 180));
+                GameObject instance = Instantiate(projectilePrefab, transform.position + bulletOffset, Quaternion.Euler(0, 0, 180));
                 Rigidbody2D rb2d = instance.GetComponent<Rigidbody2D>();
                 if (rb2d != null)
                 {
